@@ -17,16 +17,19 @@ The context name is configured for csv-parser and the port is running
 on default 8080 on a embedded tomcat, the project is packaged in a jar file.
 
 So, you make a ```maven clean compile package``` you will find inside the Target folder
-a jar file like ''csv_parser-${version}-SNAPSHOT.jar'', the ${version} is the 
+a jar file like ```csv_parser-${version}-SNAPSHOT.jar```, the ${version} is the 
 version configured on pom.xml.
 
-After that you can run '''java -jar ${jarName}''' and the application will
+After that you can run ``java -jar ${jarName}`` and the application will
 run.
 
 If you prefer you can change the application.properties file inside
 resources folder to specify a default port or context name.
 
-After start the application, if you did not change configurations, you can access in your browse by address http://localhost:8080/csv-parser.
+After start the application, if you did not change configurations, you can access in your browse by address 
+
+    http://localhost:8080/csv-parser.
+    
 Else you have to adapt the URL to your port and context name.
 
 ## Folders
