@@ -38,6 +38,34 @@ and we process one file by time.
 
 These questions are improvement that would be developed.
 
+## The process
+
+The logic of processing the files is simple, after upload a file
+the web interface will request to process the data from this file and will send
+a GET request for:
+
+    http://localhost:8080/csv-parser/process?fileName=${fileName}
+
+The file will be analyzed with the following rules:
+
+Remove any records (rows) which meet both of the following conditions:
+
+*	Have a Decision of 0
+*	For each variable (column), no value falls between FMIN and FMAX.
+
+Where FMIN and FMAX are the smallest and largest value for that variable across all records with a decision value of 1.
+
+The result is a List of Strings that will be send for Client side,
+the client side split the strings to DataTables structure that is required, an Array of Array of strings.
+Each string`s array on result will be a line on datatables.
+
+## DataTables - Why DataTables?
+
+DataTables is a strong library on client side that has a large number of features and plugins.
+With the default configuration we will have pagination, sort and search for each field inside the table.
+
+
+
 
 
 
